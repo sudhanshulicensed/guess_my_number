@@ -4,8 +4,6 @@ let highscore = 0;
 let secretNumber = Math.trunc(Math.random() *20) + 1;
 let score = 20;
 
-document.querySelector('.number').textContent = secretNumber;
-
 const displayMessage = function(message) {
   document.querySelector('.message').textContent = message;
 };
@@ -19,7 +17,8 @@ document.querySelector('.check').addEventListener('click', function () {
   } 
   // When guess is equal to the secretNumber
   else if (guess === secretNumber) {
-    displayMessage("Correct Number 🎉")
+    displayMessage("Correct Number 🎉");
+    document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     //Highscore
